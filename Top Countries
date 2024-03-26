@@ -1,0 +1,13 @@
+#This code helped me find the top countries based on customer count
+
+select d.country,				
+	count(distinct a.customer_id) as Customer_count			
+				
+from customer A				
+inner join address B on B.address_id = A.address_id				
+inner join city C on B.city_id = C.city_id				
+inner join country D on C.country_id = D.country_id				
+				
+group by country				
+order by customer_count DESC				
+limit 10				
