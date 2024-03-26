@@ -1,0 +1,13 @@
+# This code helped me gather the top 10 cities in terms of customer count from the top 10 countries.
+select D.country, C.city,								
+count (customer_id) as Count_customers								
+from customer A								
+inner join address B on a.address_id = b.address_id								
+inner join city C on B.city_id = C.city_id								
+inner join country D on C.country_id = D.country_id								
+where d.country in ('India','China','United States','Japan','Mexico','Brazil',								
+					'Russian Federation','Philipines','Turkey','Indonesia')			
+								
+group by D.country, C.city								
+order by Count_Customers DESC								
+Limit 10								
