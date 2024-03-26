@@ -1,0 +1,19 @@
+# In this SQL code I joined different tables to gather the top customers that resided in cities that had the most sales.
+select 	A.first_name,							
+	A.last_name,							
+	d.city,							
+	e.country,							
+	sum(c.amount) as Total							
+from customer A								
+Inner Join address B on b.address_id = A.address_id								
+inner join payment c on a.customer_id = c.customer_id								
+inner join city D on b.city_id = d.city_id								
+inner join country E on d.country_id = e.country_id								
+group by first_name,								
+	A.last_name,							
+	d.city,							
+	e.country							
+having d.city in ('Aurora','Acua','Citrus Heights','Iwaki','Ambattur','Shanwei','So Leiopoldo','Teboksary','Tianjin','Cianjur')								
+order by total desc								
+limit 5								
+								
