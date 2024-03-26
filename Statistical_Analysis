@@ -1,0 +1,21 @@
+# This is a code I used to gather basic statisical info on some variables.
+select  min(release_year) as  min_release_year,					
+	max(release_year) as max_release_year,				
+	count(release_year) as count_release_year,				
+	min(rental_duration) as min_rental_duration,				
+	max(rental_duration) as max_rental_duration,				
+	avg(rental_duration) as avg_rental_duration,				
+	count(rental_duration) as count_rental_duration,				
+	min(length) as min_length,				
+	max(length) as max_length,				
+	avg(length) as avg_length,				
+	count(length) as count_length,				
+	min(rental_rate) as min_rental_rate,				
+	max(rental_rate) as max_rental_rate,				
+	avg(rental_rate) as avg_rental_rate,				
+	count(rental_rate) as count_rental_rate,				
+	min(replacement_cost) as min_replacement_cost,				
+	max(replacement_cost) as max_replacement_cost,				
+	avg(replacement_cost) as avg_replacement_cost,				
+	count(replacement_cost) as count_replacement_cost				
+from film					
